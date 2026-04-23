@@ -66,6 +66,17 @@ try:
     '''
     cur.execute(delete_script, ("sowmya",))
 
+    # SELECT query
+    cur.execute("SELECT * FROM employee")
+
+    # fetch all rows
+    rows = cur.fetchall()
+
+    # print data
+    for row in rows:
+        print(row["id"], row["name"], row["salary"], row["dept_id"])
+
+
     # commit changes
     conn.commit()
 
